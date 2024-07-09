@@ -16,6 +16,11 @@ function sortear() {
 
     for (let i=1; i<=quantidade; i++ ){
         let numeroSorteado = Math.floor(Math.random() * (numeroFinal - numeroInicial + 1)) + parseInt(numeroInicial);
+        
+        while(listaNumerosSorteados.includes(numeroSorteado)){
+            numeroSorteado = Math.floor(Math.random() * (numeroFinal - numeroInicial + 1)) + parseInt(numeroInicial);
+        }
+
         listaNumerosSorteados.push(numeroSorteado);
     }
     var resultado = document.getElementById('resultado');
