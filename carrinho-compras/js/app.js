@@ -4,6 +4,10 @@ function adicionar() {
     let nomeProduto = produto.split('-')[0];
     let valorUnitario = parseFloat(produto.split('R$')[1]);
     let quantidade = parseInt(document.getElementById('quantidade').value);
+    if (quantidade === 0){
+        alert('A quantidade deve ser no mínimo 1.')
+        return;
+    }
     let preco = quantidade * valorUnitario;
     lista.push(preco);
 
@@ -16,6 +20,7 @@ function adicionar() {
       </section>`;
 
       atualizarTotal();
+      document.getElementById('quantidade').value = 0;
 }
 
 function atualizarTotal() {
